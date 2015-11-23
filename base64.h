@@ -23,11 +23,13 @@
 #ifndef CONST_TIME_BASE64_H
 #define CONST_TIME_BASE64_H
 
-void base64Encode               (char *dest, const void *src, size_t srcLen);
-int  base64Decode               (void *dest, const char *src, size_t srcLen);
-void base64EncodeDotSlash       (char *dest, const void *src, size_t srcLen);
-int  base64DecodeDotSlash       (void *dest, const char *src, size_t srcLen);
-void base64EncodeDotSlashOrdered(char *dest, const void *src, size_t srcLen);
-int  base64DecodeDotSlashOrdered(void *dest, const char *src, size_t srcLen);
+#include <cstddef>
+
+void base64Encode               (char *dest, const void *src, std::size_t srcLen);
+int  base64Decode               (void *dest, const char *src, std::size_t srcLen);
+void base64EncodeDotSlash       (char *dest, const void *src, std::size_t srcLen);
+int  base64DecodeDotSlash       (void *dest, const char *src, std::size_t srcLen);
+void base64EncodeDotSlashOrdered(char *dest, const void *src, std::size_t srcLen);
+int  base64DecodeDotSlashOrdered(void *dest, const char *src, std::size_t srcLen);
 
 #endif

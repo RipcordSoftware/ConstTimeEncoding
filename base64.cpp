@@ -230,7 +230,7 @@ inline void base64Encode3BytesDotSlashOrdered(char dest[4], const uint8_t src[3]
 // **********************
 
 // Base64 character set "[A-Z][a-z][0-9]+/"
-void base64Encode(char *dest, const void *src, size_t srcLen)
+void base64Encode(char *dest, const void *src, std::size_t srcLen)
 {
 	for (; srcLen >= 3; srcLen -= 3)
 	{
@@ -242,7 +242,7 @@ void base64Encode(char *dest, const void *src, size_t srcLen)
 	{
 		uint8_t tmp[3] = {0, 0, 0};
 
-		for (size_t i = 0; i < srcLen; i++)
+		for (std::size_t i = 0; i < srcLen; i++)
 		{
 			tmp[i] = ((const uint8_t*) src)[i];
 		}
@@ -257,7 +257,7 @@ void base64Encode(char *dest, const void *src, size_t srcLen)
 	*dest = 0;
 }
 
-int base64Decode(void *dest, const char *src, size_t srcLen)
+int base64Decode(void *dest, const char *src, std::size_t srcLen)
 {
 	int err = 0;
 
@@ -269,7 +269,7 @@ int base64Decode(void *dest, const char *src, size_t srcLen)
 	}
 	if (srcLen > 0)
 	{
-		size_t  i;
+		std::size_t  i;
 		uint8_t tmpOut[3];
 		char    tmpIn[4] = {'A', 'A', 'A', 'A'};
 
@@ -292,7 +292,7 @@ int base64Decode(void *dest, const char *src, size_t srcLen)
 }
 
 // Base64 character set "./[A-Z][a-z][0-9]"
-void base64EncodeDotSlash(char *dest, const void *src, size_t srcLen)
+void base64EncodeDotSlash(char *dest, const void *src, std::size_t srcLen)
 {
 	for (; srcLen >= 3; srcLen -= 3)
 	{
@@ -304,7 +304,7 @@ void base64EncodeDotSlash(char *dest, const void *src, size_t srcLen)
 	{
 		uint8_t tmp[3] = {0, 0, 0};
 
-		for (size_t i = 0; i < srcLen; i++)
+		for (std::size_t i = 0; i < srcLen; i++)
 		{
 			tmp[i] = ((const uint8_t*) src)[i];
 		}
@@ -319,7 +319,7 @@ void base64EncodeDotSlash(char *dest, const void *src, size_t srcLen)
 	*dest = 0;
 }
 
-int base64DecodeDotSlash(void *dest, const char *src, size_t srcLen)
+int base64DecodeDotSlash(void *dest, const char *src, std::size_t srcLen)
 {
 	int err = 0;
 
@@ -331,7 +331,7 @@ int base64DecodeDotSlash(void *dest, const char *src, size_t srcLen)
 	}
 	if (srcLen > 0)
 	{
-		size_t  i;
+		std::size_t  i;
 		uint8_t tmpOut[3];
 		char    tmpIn[4] = {'A', 'A', 'A', 'A'};
 
@@ -354,7 +354,7 @@ int base64DecodeDotSlash(void *dest, const char *src, size_t srcLen)
 }
 
 // Base64 character set "[.-9][A-Z][a-z]" or "./[0-9][A-Z][a-z]"
-void base64EncodeDotSlashOrdered(char *dest, const void *src, size_t srcLen)
+void base64EncodeDotSlashOrdered(char *dest, const void *src, std::size_t srcLen)
 {
 	for (; srcLen >= 3; srcLen -= 3)
 	{
@@ -366,7 +366,7 @@ void base64EncodeDotSlashOrdered(char *dest, const void *src, size_t srcLen)
 	{
 		uint8_t tmp[3] = {0, 0, 0};
 
-		for (size_t i = 0; i < srcLen; i++)
+		for (std::size_t i = 0; i < srcLen; i++)
 		{
 			tmp[i] = ((const uint8_t*) src)[i];
 		}
@@ -381,7 +381,7 @@ void base64EncodeDotSlashOrdered(char *dest, const void *src, size_t srcLen)
 	*dest = 0;
 }
 
-int base64DecodeDotSlashOrdered(void *dest, const char *src, size_t srcLen)
+int base64DecodeDotSlashOrdered(void *dest, const char *src, std::size_t srcLen)
 {
 	int err = 0;
 
@@ -393,7 +393,7 @@ int base64DecodeDotSlashOrdered(void *dest, const char *src, size_t srcLen)
 	}
 	if (srcLen > 0)
 	{
-		size_t  i;
+		std::size_t  i;
 		uint8_t tmpOut[3];
 		char    tmpIn[4] = {'A', 'A', 'A', 'A'};
 
